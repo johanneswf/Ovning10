@@ -1,14 +1,13 @@
 const inputsubmit = document.querySelector('#inputsubmit');
 const btnsubmit = document.querySelector('#btnsubmit');
 const outputarea = document.querySelector('#output');
-
 const uri = 'https://www.swapi.tech/api/people/?name=';
 
 const getStarWars = async function () {
   let outputresult = '';
 
   if (inputsubmit.value) {
-    const fetched = await fetch(uri + '' + inputsubmit.value)
+    const fetched = await fetch(uri + inputsubmit.value)
       .then(res => res.json())
       .then(data => {
         if (data.result.length > 0) {
