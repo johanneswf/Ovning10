@@ -4,13 +4,12 @@ const outputarea = document.querySelector('#output');
 const uri = 'https://www.swapi.tech/api/people/?name=';
 
 const getStarWars = async function () {
-  let outputresult = '';
-
   if (inputsubmit.value) {
-    const fetched = await fetch(uri + inputsubmit.value)
+    await fetch(uri + inputsubmit.value)
       .then(res => res.json())
       .then(data => {
         if (data.result.length > 0) {
+          let outputresult = '';
           for (let index = 0; index < data.result.length; index++) {
             const props = data.result[index].properties;
             outputresult +=
