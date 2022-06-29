@@ -30,7 +30,4 @@ const getStarWars = function () {
   else outputarea.innerHTML = 'Nothing submitted.';
 }
 
-btnsubmit.addEventListener('click', e => {
-  e.preventDefault;
-  getStarWars();
-});
+btnsubmit.addEventListener('click', getStarWars);
