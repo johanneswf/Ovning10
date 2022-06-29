@@ -27,7 +27,7 @@ const getStarWars = async function () {
       })
       .catch(err => console.log(err));
   }
-  else outputarea.innerHTML += 'Nothing submitted. \n\n';
+  else outputarea.innerHTML = 'Nothing submitted.';
 }
 
 btnsubmit.addEventListener('click', e => {
