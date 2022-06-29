@@ -1,8 +1,8 @@
 const btndraw = document.querySelector('#btndraw');
 const divcard = document.querySelector('#divcard');
 
-const getCard = async function () {
-  await fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=1')
+const getCard = function () {
+  fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=1')
     .then(res => res.json())
     .then(data => {
       const imgcard = document.createElement('img');
