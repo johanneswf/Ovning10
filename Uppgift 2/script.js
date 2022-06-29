@@ -2,7 +2,7 @@ const btndraw = document.querySelector('#btndraw');
 const divcard = document.querySelector('#divcard');
 
 const getCard = async function () {
-  await fetch('http://deckofcardsapi.com/api/deck/new/draw/?count=1')
+  await fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=1')
     .then(res => res.json())
     .then(data => {
       const imgcard = document.createElement('img');
@@ -17,4 +17,4 @@ const getCard = async function () {
 btndraw.addEventListener('click', function (e) {
   e.preventDefault();
   getCard();
-})
+});
