@@ -2,11 +2,11 @@ const inputsubmit = document.querySelector('#inputsubmit');
 const btnsubmit = document.querySelector('#btnsubmit');
 const outputarea = document.querySelector('#output');
 
-let uri = 'https://www.swapi.tech/api/people/?name=';
+const uri = 'https://www.swapi.tech/api/people/?name=';
 
-async function getStarWars() {
+const getStarWars = async function () {
   // @ts-ignore
-  const fetched = await fetch(uri + inputsubmit.value)
+  const fetched = await fetch(uri + '' + inputsubmit.value)
     .then(res => res.json())
     .catch(err => console.log(err));
 
