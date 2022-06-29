@@ -2,12 +2,6 @@ const btndraw = document.querySelector('#btndraw');
 const divcard = document.querySelector('#divcard');
 
 async function getCard() {
-
-}
-
-btndraw.addEventListener('click', async function (e) {
-  e.preventDefault();
-  divcard.innerHTML = '';
   await fetch('http://deckofcardsapi.com/api/deck/new/draw/?count=1')
     .then(res => res.json())
     .then(data => {
@@ -16,4 +10,10 @@ btndraw.addEventListener('click', async function (e) {
 
       divcard.appendChild(imgcard);
     });
+}
+
+btndraw.addEventListener('click', function (e) {
+  e.preventDefault();
+  divcard.innerHTML = '';
+  getCard();
 })
