@@ -14,7 +14,4 @@ const getCard = function () {
     .catch(err => console.log(err));
 }
 
-btndraw.addEventListener('click', function (e) {
-  e.preventDefault();
-  getCard();
-});
+btndraw.addEventListener('click', getCard);
