@@ -7,6 +7,7 @@ async function getCard() {
 
 btndraw.addEventListener('click', async function (e) {
   e.preventDefault();
+  divcard.innerHTML = '';
   await fetch('http://deckofcardsapi.com/api/deck/new/draw/?count=1')
     .then(res => res.json())
     .then(data => {
