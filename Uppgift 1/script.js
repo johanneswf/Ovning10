@@ -3,11 +3,11 @@ const btnsubmit = document.querySelector('#btnsubmit');
 const outputarea = document.querySelector('#output');
 const uri = 'https://www.swapi.tech/api/people/?name=';
 
-const getStarWars = async function () {
+const getStarWars = function () {
   // @ts-ignore
   if (inputsubmit.value) {
     // @ts-ignore
-    await fetch(uri + inputsubmit.value)
+    fetch(uri + inputsubmit.value)
       .then(res => res.json())
       .then(data => {
         const datalength = data.result.length;
