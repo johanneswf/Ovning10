@@ -16,13 +16,10 @@ const getStarWars = async function () {
           for (let index = 0; index < datalength; index++) {
             const props = data.result[index].properties;
             outputresult +=
-// Ugly
-`Name: ${props.name}
-Height: ${props.height}
-Gender: ${props.gender}
-Hair Color: ${props.hair_color}
-
-`;
+              `Name: ${props.name}\n` +
+              `Height: ${props.height}\n` +
+              `Gender: ${props.gender}\n` +
+              `Hair Color: ${props.hair_color}\n\n`;
           }
           outputarea.innerHTML = outputresult;
         }
@@ -30,10 +27,10 @@ Hair Color: ${props.hair_color}
       })
       .catch(err => console.log(err));
   }
-  else outputarea.innerHTML = 'Nothing submitted.';
+  else outputarea.innerHTML += 'Nothing submitted. \n\n';
 }
 
 btnsubmit.addEventListener('click', e => {
   e.preventDefault;
   getStarWars();
-})
+});
